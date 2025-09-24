@@ -3,6 +3,7 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  base: '/hashprice-dashboard/v1/',   // <— bump to v1
-  resolve: { alias: { '@': '/src' } }
+  // MUST match your repo name (with trailing slash)
+  base: '/hashprice-dashboard/',
+  resolve: { alias: { '@': '/src' } },
 })
