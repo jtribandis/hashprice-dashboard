@@ -685,7 +685,7 @@ function ProtocolEquilibriumPanel() {
               />
               <YAxis tick={{ fill: "#bbb" }} />
               <Tooltip
-                contentStyle={{ background: "#111", border: "1px solid "#333" }}
+                contentStyle={{ background: "#111", border: "1px solid #333" }}
                 labelFormatter={(t: number) => tickFmt(t)}
               />
               <Legend />
