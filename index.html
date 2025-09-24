@@ -5,26 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hashprice Dashboard</title>
 
-    <!-- Hard-stop browser/CDN from caching the HTML -->
+    <!-- Stop caching the HTML document -->
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
     <meta http-equiv="Pragma" content="no-cache" />
     <meta http-equiv="Expires" content="0" />
 
-    <!-- Optional but helpful: make relative URLs resolve correctly on Pages -->
-    <base href="/hashprice-dashboard/">
+    <!-- IMPORTANT: versioned base path -->
+    <base href="/hashprice-dashboard/v1/">
   </head>
   <body>
     <div id="root"></div>
 
-    <!-- If a service worker ever got registered, kill it so it can’t serve an old app -->
+    <!-- Kill any old service worker so it can't serve stale HTML -->
     <script>
       if ("serviceWorker" in navigator) {
         navigator.serviceWorker.getRegistrations?.().then(rs => rs.forEach(r => r.unregister()));
       }
     </script>
 
-    <!-- Vite dev entry (Vite will replace this in production with hashed assets) -->
-    <!-- Adding a small query flag helps some proxies treat it as a new request -->
+    <!-- Vite dev entry (replaced with hashed assets at build time) -->
     <script type="module" src="/src/main.tsx?v=build"></script>
   </body>
 </html>
