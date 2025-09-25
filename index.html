@@ -1,14 +1,32 @@
-
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hashprice Dashboard</title>
-    <script type="module" crossorigin src="/hashprice-dashboard/assets/index-DjWiz-_I.js"></script>
+
+    <!-- Stop caching the HTML document -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+
+    <!-- IMPORTANT: repo base path -->
+    <base href="/hashprice-dashboard/">
+
+    <!-- Current hashed CSS in gh-pages/assets -->
     <link rel="stylesheet" crossorigin href="/hashprice-dashboard/assets/index-D0mroBo4.css">
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root"></div>
+
+    <!-- If any service worker was registered, unregister it so an old app can't be served -->
+    <script>
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker.getRegistrations?.().then(rs => rs.forEach(r => r.unregister()));
+      }
+    </script>
+
+    <!-- Current hashed JS in gh-pages/assets -->
+    <script type="module" crossorigin src="/hashprice-dashboard/assets/index-B87iVHFi.js"></script>
   </body>
 </html>
