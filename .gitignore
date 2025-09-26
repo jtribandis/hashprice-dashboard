@@ -1,0 +1,5 @@
+# keep gh-pages clean
+node_modules/
+dist/
+.cache/
+*.map
